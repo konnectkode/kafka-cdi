@@ -1,8 +1,9 @@
 version: 2
-  jobs:
-    build:
-      docker:
-          - image: maven:3.6-jdk-8-alpine
-      steps:
-        - checkout
-        - run: echo "Simple build"
+
+jobs:
+  build:
+    docker:
+      - image: maven:3.6-jdk-8-alpine
+    steps:
+      - checkout
+      - run: echo "Simple build"
