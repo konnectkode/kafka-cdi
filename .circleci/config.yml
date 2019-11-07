@@ -6,4 +6,10 @@ jobs:
       - image: maven:3.6-jdk-8-alpine
     steps:
       - checkout
-      - run: echo "Simple build"
+      - restore_cache:
+          key: maven
+      - run: ./mvnw verify
+      - save_cache:
+          paths:
+            - ~/.m2
+          key: maven
