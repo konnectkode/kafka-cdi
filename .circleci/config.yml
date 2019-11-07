@@ -8,7 +8,7 @@ jobs:
       - checkout
       - restore_cache:
           key: maven
-      - run: ./mvnw verify
+      - run: mvn verify
       - save_cache:
           paths:
             - ~/.m2
