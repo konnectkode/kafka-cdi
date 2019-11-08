@@ -1,8 +1,8 @@
 # Kafka-CDI - A extension for Apache Kafka
 
-![CircleCI](https://img.shields.io/circleci/build/github/konnectkode/kafka-cdi?style=for-the-badge)
-![Version](https://img.shields.io/github/v/release/danilomagalhaes/kafka-cdi?style=for-the-badge)
-![GitHub](https://img.shields.io/github/license/danilomagalhaes/kafka-cdi?style=for-the-badge)
+[![CircleCI](https://img.shields.io/circleci/build/github/konnectkode/kafka-cdi?style=for-the-badge)](https://circleci.com/gh/konnectkode/kafka-cdi)
+[![Version](https://img.shields.io/github/v/release/danilomagalhaes/kafka-cdi?style=for-the-badge)](https://github.com/konnectkode/kafka-cdi/releases/latest)
+[![GitHub](https://img.shields.io/github/license/danilomagalhaes/kafka-cdi?style=for-the-badge)]((https://www.apache.org/licenses/LICENSE-2.0))
 
 ## Getting started
 
