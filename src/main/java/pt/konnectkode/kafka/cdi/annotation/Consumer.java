@@ -25,7 +25,7 @@ public @interface Consumer {
 
     /**
      * <p>
-     *     A unique string that identifies the consumer group this consumer belongs to. </br>
+     *     A unique string that identifies the consumer group this consumer belongs to.
      * </p>
      */
     String groupId() default "";
