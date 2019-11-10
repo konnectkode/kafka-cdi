@@ -14,4 +14,4 @@
 #  limitations under the License.
 #
 
-pt.konnectkode.kafka.cdi.extension.KafkaExtension
+com.konnectkode.kafka.cdi.extension.KafkaExtension

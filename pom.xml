@@ -4,9 +4,63 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>pt.konnectkode</groupId>
+    <groupId>com.konnectkode</groupId>
     <artifactId>kafka-cdi</artifactId>
     <version>0.1.0-SNAPSHOT</version>
+
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <scm>
+        <url>https://github.com/konnectkode/kafka-cdi.git</url>
+        <connection>scm:git:git@github.com:konnectkode/kafka-cdi.git</connection>
+        <developerConnection>scm:git:git@github.com:konnectkode/kafka-cdi.git</developerConnection>
+        <tag>HEAD</tag>
+    </scm>
+
+    <repositories>
+        <repository>
+            <id>central</id>
+            <name>Maven Repository Switchboard</name>
+            <url>https://repo.maven.apache.org/maven2</url>
+        </repository>
+    </repositories>
+
+    <distributionManagement>
+        <snapshotRepository>
+            <id>sonatype-nexus-snapshots</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+        <repository>
+            <id>sonatype-nexus-release</id>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
+        </repository>
+    </distributionManagement>
+
+    <issueManagement>
+        <system>Github</system>
+        <url>https://github.com/konnectkode/kafka-cdi/issues</url>
+    </issueManagement>
+
+    <ciManagement>
+        <system>Travis</system>
+        <url>https://circleci.com/gh/konnectkode/kafka-cdi</url>
+    </ciManagement>
+
+    <developers>
+        <developer>
+            <name>Danilo Romão</name>
+            <email>daniloromao.m@gmail.com</email>
+            <organization>Konnect Kode</organization>
+            <organizationUrl>https://github.com/konnectkode</organizationUrl>
+            <timezone>UTC+01:00</timezone>
+        </developer>
+    </developers>
 
     <properties>
         <version.kafka.clients>2.3.0</version.kafka.clients>
@@ -21,6 +75,11 @@
         <version.arquillian>1.1.11.Final</version.arquillian>
         <version.arquillian-weld>1.0.0.Final</version.arquillian-weld>
         <version.debezium>0.10.0.Final</version.debezium>
+
+        <nexus-staging-maven-plugin.version>1.6.8</nexus-staging-maven-plugin.version>
+        <version.maven-javadoc-plugin>2.10.4</version.maven-javadoc-plugin>
+        <version.maven-source-plugin>3.0.1</version.maven-source-plugin>
+        <version.maven-gpg-plugin>1.6</version.maven-gpg-plugin>
 
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
@@ -178,6 +237,67 @@
             </plugin>
         </plugins>
     </build>
+
+    <profiles>
+        <profile>
+            <id>release</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.sonatype.plugins</groupId>
+                        <artifactId>nexus-staging-maven-plugin</artifactId>
+                        <version>${nexus-staging-maven-plugin.version}</version>
+                        <extensions>true</extensions>
+                        <configuration>
+                            <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+                            <serverId>ossrh</serverId>
+                            <autoReleaseAfterClose>false</autoReleaseAfterClose>
+                            <keepStagingRepositoryOnCloseRuleFailure>true</keepStagingRepositoryOnCloseRuleFailure>
+                        </configuration>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-source-plugin</artifactId>
+                        <version>${version.maven-source-plugin}</version>
+                        <executions>
+                            <execution>
+                                <id>attach-sources</id>
+                                <goals>
+                                    <goal>jar-no-fork</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-javadoc-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>attach-javadocs</id>
+                                <goals>
+                                    <goal>jar</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <version>${version.maven-gpg-plugin}</version>
+                        <executions>
+                            <execution>
+                                <id>sign-artifacts</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 
 
 </project>
