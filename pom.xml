@@ -4,7 +4,7 @@
 
     <groupId>com.konnectkode</groupId>
     <artifactId>kafka-cdi</artifactId>
-    <version>0.1.0</version>
+    <version>0.1.1-SNAPSHOT</version>
 
     <name>Kafka CDI</name>
     <description>CDI extension for Apache Kafka</description>
@@ -22,7 +22,7 @@
         <url>https://github.com/konnectkode/kafka-cdi.git</url>
         <connection>scm:git:git@github.com:konnectkode/kafka-cdi.git</connection>
         <developerConnection>scm:git:git@github.com:konnectkode/kafka-cdi.git</developerConnection>
-        <tag>0.1.0</tag>
+        <tag>HEAD</tag>
     </scm>
 
     <repositories>
