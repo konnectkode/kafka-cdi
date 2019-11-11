@@ -6,6 +6,10 @@
     <artifactId>kafka-cdi</artifactId>
     <version>0.1.1-SNAPSHOT</version>
 
+    <name>Kafka CDI</name>
+    <description>CDI extension for Apache Kafka</description>
+    <url>https://github.com/konnectkode/kafka-cdi</url>
+
     <licenses>
         <license>
             <name>The Apache Software License, Version 2.0</name>
