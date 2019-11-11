@@ -2,7 +2,7 @@
 
 [![CircleCI](https://img.shields.io/circleci/build/github/konnectkode/kafka-cdi?style=for-the-badge)](https://circleci.com/gh/konnectkode/kafka-cdi)
 [![Codecov](https://img.shields.io/codecov/c/github/konnectkode/kafka-cdi?style=for-the-badge)](https://codecov.io/gh/konnectkode/kafka-cdi)
-![Maven Central](https://img.shields.io/maven-central/v/com.konnectkode/kafka-cdi?style=for-the-badge)
+[![Maven Central](https://img.shields.io/maven-central/v/com.konnectkode/kafka-cdi?style=for-the-badge)](https://search.maven.org/artifact/com.konnectkode/kafka-cdi/0.1.0/jar)
 [![GitHub](https://img.shields.io/github/license/konnectkode/kafka-cdi?style=for-the-badge)]((https://www.apache.org/licenses/LICENSE-2.0))
 
 ## Getting started
