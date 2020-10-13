@@ -67,7 +67,7 @@
     <properties>
         <version.kafka.clients>2.3.0</version.kafka.clients>
 
-        <version.junit>4.12</version.junit>
+        <version.junit>4.13.1</version.junit>
         <version.assertj>3.11.1</version.assertj>
         <version.mockito>3.1.0</version.mockito>
         <version.weld-core>2.3.5.Final</version.weld-core>
